@@ -17,6 +17,7 @@ int potDelay;
 int potMisc;
 
 int brightness;
+int saturation;
 
 bool currentUpState;
 bool lastUpState;
@@ -75,6 +76,7 @@ void loop() {
   brightness = (int)(((float)potBrightness /1023) * MAX_BRIGHTNESS);
   color = potToCHSV(potColor);
   secondaryColor = potToCHSV(potMisc);
+  saturation = map(potMisc, 0, 1023, 0, 255);
   
 
 
@@ -101,7 +103,7 @@ void loop() {
   // Run effects
 switch (sequence) {
   case 0: // Solid
-    still(color);
+    still(color, saturation);
     break;
   case 1: // Forth color light (sawblade effect)
     colorWipe(color, (int)(((float)potDelay /1023) * 20), (int)(((float)potMisc / 1023) * 20));

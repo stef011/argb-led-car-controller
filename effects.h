@@ -10,7 +10,7 @@ void initializeEffects();
 
 // Fixed color 
 // @param color CRGB color to fill the LEDs with
-void still(CHSV color);
+void still(CHSV color, uint8_t saturation);
 
 // A simple colorWipe animation 
 // @param color CRGB color of the leds

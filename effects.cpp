@@ -25,11 +25,10 @@ void initializeEffects() {
   // nothing to do
 }
 
-
-void still(CHSV color) {
-  fill_solid(leds, NUM_LEDS, color);
+void still(CHSV color, uint8_t saturation)
+{
+  fill_solid(leds, NUM_LEDS, CHSV(color.hue, saturation, color.value));
 }
-
 
 void colorWipe(CHSV color, int speed, int length) {
   uint8_t thisLed = map(beat8(speed, 0), 0, 255, 0, NUM_LEDS - 1);
