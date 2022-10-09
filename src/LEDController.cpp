@@ -2,7 +2,12 @@
 #include "effects.h"
 #include "inputs.h"
 
+#include <Arduino.h>
+
 // #include <FastLED.h>
+
+
+void resetTableState();
 
 CRGB leds[NUM_LEDS];
 
