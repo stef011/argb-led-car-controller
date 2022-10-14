@@ -8,8 +8,8 @@
 Controller::Controller(LEDStrip *ledStrip)
 {
   this->_ledStrip = ledStrip;
-  this->_prevButton = new Button(2);
-  this->_nextButton = new Button(3);
+  this->_prevButton = new Button(BUTTON_PREV_PIN);
+  this->_nextButton = new Button(BUTTON_NEXT_PIN);
 };
 
 /**

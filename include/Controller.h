@@ -14,6 +14,9 @@
 #include <effects/MovingRainbow.h>
 #include <effects/Sinelon.h>
 
+#define BUTTON_PREV_PIN 3
+#define BUTTON_NEXT_PIN 4
+
 class Controller
 {
 private:
