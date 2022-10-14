@@ -10,7 +10,6 @@ Controller::Controller(LEDStrip *ledStrip)
   this->_ledStrip = ledStrip;
   this->_prevButton = new Button(2);
   this->_nextButton = new Button(3);
-  this->_currentEffect = new Effects();
 };
 
 /**
@@ -40,12 +39,12 @@ void Controller::SetEffect(Effects *effect)
 
 void Controller::NextEffect()
 {
-  this->_currentEffect = ++this->_currentEffect;
-  this->SetEffect(this->_currentEffect);
+  this->_currentEffect = ++_currentEffect;
+  this->SetEffect(&this->_currentEffect);
 }
 
 void Controller::PreviousEffect()
 {
-  this->_currentEffect = --this->_currentEffect;
-  this->SetEffect(this->_currentEffect);
+  this->_currentEffect = --_currentEffect;
+  this->SetEffect(&this->_currentEffect);
 }

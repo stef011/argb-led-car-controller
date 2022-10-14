@@ -9,7 +9,6 @@ void Sinelon::tick(LEDStrip *ledStrip, Parameters *parameters)
 
   EVERY_N_SECONDS(5)
   {
-    uint8_t baseC = parameters->getColor().hue;
     targetPalette = CRGBPalette16(CHSV(random8(), 255, random8(128, 255)), CHSV(random8(), 255, random8(128, 255)), CHSV(random8(), 192, random8(128, 255)), CHSV(random8(), 255, random8(128, 255)));
   }
 

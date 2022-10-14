@@ -24,7 +24,7 @@ private:
 
   Button *_prevButton, *_nextButton;
 
-  Effects *_currentEffect;
+  Effects _currentEffect = Effects::Still;
   Effect _effectList[static_cast<int>(Effects::EnumCount)] = {
       Still(),
       ColorWipe(),
