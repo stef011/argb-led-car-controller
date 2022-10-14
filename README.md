@@ -23,31 +23,29 @@ Clone this repository
 git clone https://github.com/stef011/argb-led-car-controller.git
 ```
 
-Open the `LEDController.ino` file with the Arduino IDE and upload it to your board.
+Open the project in your favorite IDE, I use [PlatformIO](https://platformio.org/) with [Visual Studio Code](https://code.visualstudio.com/).
 
-You'll need 4 potentiometers and 2 buttons, connect them to the Arduino board as shown in the following table:
+You'll need to setup few things before uploading the code on your arduino board:
 
-| Potentiometer | Arduino Pin |
-| ------------- | ----------- |
-| Brightness    | A1          |
-| Color         | A2          |
-| Speed         | A3          |
-| Misc          | A4          |
+| Description                                                                 | File         |  Parameter      |
+| --------------------------------------------------------------------------- | ------------ | --------------- |
+| The pin of the led strip                                                    | main.cpp     | LED_PIN         |
+| The number of leds in the led strip                                         | main.cpp     | LED_COUNT       |
+| The maximum brightness of the led strip                                     | main.cpp     | MAX_BRIGHTNESS  |
+| Pin of the Brightness potentiometer                                         | Parameters.h | POT1_PIN        |
+| Pin of the Color potentiometer                                              | Parameters.h | POT2_PIN        |
+| Pin of the Speed or secondary color, saturation or fade speed potentiometer | Parameters.h | POT3_PIN        |
+| Pin of the effect speed or length potentiometer                             | Parameters.h | POT4_PIN        |
+| The pin of the "next" button                                                | Controller.h | BUTTON_NEXT_PIN |
+| The pin of the "previous" button                                            | Controller.h | BUTTON_PREV_PIN |
 
-| Button | Arduino Pin |
-| ------ | ----------- |
-| Next   | 4           |
-| Prev   | 5           |
+If you want to change the type of Leds you're using, you'll need to change the `LED_TYPE` parameter in the `LEDStrip.h` file.
 
-Connect the LED strip to the pin 2 on the board.
+Some types of leds have a different order of the RGB values, for instance the WS2812B leds have the order GRB, so you'll need to change the `COLOR_ORDER` parameter in the `LEDStrip.h` file.
 
-If you don't want to use these specific pins, you can change them in the `config.h` file.
+## Contributing
 
-In the `config.h` file, you will also need to configure:
-
-- The number of the LEDs connected to the controller (Be sure to have a consequent alimentation for the LED strip)
-- The maximum Brightness of the led strip (WIP)
-- The frames per second (fluidity of the effects)
+Please check the [Contribution guide](CONTRIBUTING.md) file for more information.
 
 ## Disclaimer
 
