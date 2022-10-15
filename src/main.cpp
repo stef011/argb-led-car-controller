@@ -7,13 +7,28 @@
 #define LED_COUNT 60
 #define MAX_BRIGHTNESS 255
 
+LEDStrip *ledStrip;
+Controller *controller;
+// Controller controller(&ledStrip);
+
 void setup()
 {
+  ledStrip = new LEDStrip(LED_PIN, LED_COUNT, MAX_BRIGHTNESS);
+  controller = new Controller(*ledStrip);
 }
 
 void loop()
 {
-  LEDStrip *ledStrip = new LEDStrip(LED_PIN, LED_COUNT, MAX_BRIGHTNESS);
-  Controller controller = Controller(ledStrip);
-  controller.tick();
+  controller->tick();
+}
+
+int main()
+{
+  init();
+  setup();
+  while (true)
+  {
+    loop();
+  }
+  return 0;
 }

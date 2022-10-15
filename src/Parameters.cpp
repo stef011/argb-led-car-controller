@@ -1,12 +1,10 @@
 #include <Parameters.h>
 
-Parameters::Parameters(uint16_t numLeds)
+Parameters::Parameters(uint16_t numLeds) : _pot1(new Potentiometer(PIN_POT1, numLeds)),
+                                           _pot2(new Potentiometer(PIN_POT2, numLeds)),
+                                           _pot3(new Potentiometer(PIN_POT3, numLeds)),
+                                           _pot4(new Potentiometer(PIN_POT4, numLeds))
 {
-  this->_pot1 = new Potentiometer(PIN_POT1, numLeds);
-  this->_pot2 = new Potentiometer(PIN_POT2, numLeds);
-  this->_pot3 = new Potentiometer(PIN_POT3, numLeds);
-  this->_pot4 = new Potentiometer(PIN_POT4, numLeds);
-
   this->_numLeds = numLeds;
 }
 

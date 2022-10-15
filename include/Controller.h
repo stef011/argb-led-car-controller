@@ -14,7 +14,7 @@
 #include <effects/MovingRainbow.h>
 #include <effects/Sinelon.h>
 
-#define BUTTON_PREV_PIN 3
+#define BUTTON_PREV_PIN 5
 #define BUTTON_NEXT_PIN 4
 
 class Controller
@@ -28,16 +28,16 @@ private:
   Button *_prevButton, *_nextButton;
 
   Effects _currentEffect = Effects::Still;
-  Effect _effectList[static_cast<int>(Effects::EnumCount)] = {
-      Still(),
-      ColorWipe(),
-      BackAndForth(),
-      Rainbow(),
-      MovingRainbow(),
-      Sinelon()};
+  Effect *_effectList[static_cast<int>(Effects::EnumCount)] = {
+      new Still(),
+      new ColorWipe(),
+      new BackAndForth(),
+      new Rainbow(),
+      new MovingRainbow(),
+      new Sinelon()};
 
 public:
-  Controller(LEDStrip *ledStrip);
+  Controller(LEDStrip &ledStrip);
   void tick();
 };
 

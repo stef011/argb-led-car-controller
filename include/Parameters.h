@@ -3,7 +3,6 @@
 
 #include <FastLED.h>
 #include <Potentiometer.h>
-
 #define PIN_POT1 A1
 #define PIN_POT2 A2
 #define PIN_POT3 A3

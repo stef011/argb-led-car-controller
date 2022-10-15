@@ -31,7 +31,7 @@ public:
 
   void show(); // Show the current effect
 
-  void setEffect(Effect *); // Set the effect that is currently running
+  void setEffect(Effect &); // Set the effect that is currently running
 
   int getNumLeds(); // Get the number of LEDs in the strip
 };
