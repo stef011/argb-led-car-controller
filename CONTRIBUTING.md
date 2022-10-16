@@ -24,7 +24,7 @@ The `parameter` object contains the values of the potentiometers. You can access
 class MyEffect : public Effect
 {
 public:
-  void tick(LedStrip *ledStrip, Parameter *parameter);
+  void tick(LedStrip &ledStrip, Parameter *parameter);
 };
 ```
 
@@ -33,7 +33,7 @@ public:
 ```cpp
 #include "MyEffect.h"
 
-void MyEffect::tick(LedStrip *ledStrip, Parameter *parameter)
+void MyEffect::tick(LedStrip &ledStrip, Parameter *parameter)
 {
   // Get the value of the potentiometer
   int potValue = parameter->getPot1()->getValueHSV();
@@ -69,14 +69,14 @@ Then include `effects/MyEffect.h` in `Controller.h` and add the effect to the `e
 
 ```cpp
 ...
-  Effect _effectList[static_cast<int>(Effects::EnumCount)] = {
-      Still(),
-      ColorWipe(),
-      BackAndForth(),
-      Rainbow(),
-      MovingRainbow(),
-      Sinelon(),
-      MyEffect() // Add this line
+  Effect *_effectList[static_cast<int>(Effects::EnumCount)] = {
+      new Still(),
+      new ColorWipe(),
+      new BackAndForth(),
+      new Rainbow(),
+      new MovingRainbow(),
+      new Sinelon(),
+      new MyEffect() // Add this line
       };
 ...
 ```

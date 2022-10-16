@@ -7,7 +7,7 @@
 
 #define LED_TYPE WS2812B
 #define COLOR_ORDER GRB
-#define MAX_CURRENT 4000;
+#define MAX_CURRENT 4000
 
 class Effect;     // TOFIX: circular dependency
 class Parameters; // TOFIX: circular dependency
@@ -15,12 +15,11 @@ class Parameters; // TOFIX: circular dependency
 class LEDStrip
 {
 private:
-  int _pin;                   // The _pin the LED strip is connected to
-  int _maxBrightness;         // The maximum brightness of the LED strip
-  int _maxCurrentInMilliamps; // The maximum current the LED strip can draw
-  Effect *_currentEffect;     // The effect that is currently running
-  int _numLeds;               // The number of LEDs in the strip
-  Parameters *_parameters;    // The parameters of the effects, like brightness, color, speed, etc. Every parameter is retrieved on the potentiometers
+  int _pin;                // The _pin the LED strip is connected to
+  int _maxBrightness;      // The maximum brightness of the LED strip
+  Effect *_currentEffect;  // The effect that is currently running
+  int _numLeds;            // The number of LEDs in the strip
+  Parameters *_parameters; // The parameters of the effects, like brightness, color, speed, etc. Every parameter is retrieved on the potentiometers
 
   void init();
   void readValues();

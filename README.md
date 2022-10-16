@@ -27,17 +27,20 @@ Open the project in your favorite IDE, I use [PlatformIO](https://platformio.org
 
 You'll need to setup few things before uploading the code on your arduino board:
 
-| Description                                                                 | File         |  Parameter      |
-| --------------------------------------------------------------------------- | ------------ | --------------- |
-| The pin of the led strip                                                    | main.cpp     | LED_PIN         |
-| The number of leds in the led strip                                         | main.cpp     | LED_COUNT       |
-| The maximum brightness of the led strip                                     | main.cpp     | MAX_BRIGHTNESS  |
-| Pin of the Brightness potentiometer                                         | Parameters.h | POT1_PIN        |
-| Pin of the Color potentiometer                                              | Parameters.h | POT2_PIN        |
-| Pin of the Speed or secondary color, saturation or fade speed potentiometer | Parameters.h | POT3_PIN        |
-| Pin of the effect speed or length potentiometer                             | Parameters.h | POT4_PIN        |
-| The pin of the "next" button                                                | Controller.h | BUTTON_NEXT_PIN |
-| The pin of the "previous" button                                            | Controller.h | BUTTON_PREV_PIN |
+|  Parameter      | File         | Description                                                                 |
+| --------------- | ------------ | --------------------------------------------------------------------------- |
+| LED_PIN         | main.cpp     | The pin of the led strip                                                    |
+| LED_COUNT       | main.cpp     | The number of leds in the led strip                                         |
+| MAX_BRIGHTNESS  | main.cpp     | The maximum brightness of the led strip                                     |
+| MAX_CURRENT     | LEDStrip.h   | The maximum current the ledStrip is allowed to draw                         |
+| POT1_PIN        | Parameters.h | Pin of the Brightness potentiometer                                         |
+| POT2_PIN        | Parameters.h | Pin of the Color potentiometer                                              |
+| POT3_PIN        | Parameters.h | Pin of the Speed or secondary color, saturation or fade speed potentiometer |
+| POT4_PIN        | Parameters.h | Pin of the effect speed or length potentiometer                             |
+| BUTTON_PREV_PIN | Controller.h | The pin of the "previous" button                                            |
+| BUTTON_NEXT_PIN | Controller.h | The pin of the "next" button                                                |
+| LED_TYPE        | LEDStrip.h   | The type of the leds you're using                                           |
+| COLOR_ORDER     | LEDStrip.h   | The color order of the leds you're using                                    |
 
 If you want to change the type of Leds you're using, you'll need to change the `LED_TYPE` parameter in the `LEDStrip.h` file.
 

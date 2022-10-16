@@ -13,7 +13,6 @@ LEDStrip::LEDStrip(uint8_t _pin, uint16_t numLeds, uint8_t maxBrightness)
   this->_numLeds = numLeds;
   this->_maxBrightness = maxBrightness;
   this->leds = new CRGB[numLeds];
-  this->_maxCurrentInMilliamps = 1000;
   this->_parameters = new Parameters(numLeds);
 
   pinMode(_pin, OUTPUT);
@@ -30,7 +29,7 @@ void LEDStrip::init()
 
   FastLED.addLeds<LED_TYPE, 2, COLOR_ORDER>(this->leds, this->_numLeds);
 
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, this->_maxCurrentInMilliamps);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, MAX_CURRENT);
   FastLED.setBrightness(this->_maxBrightness);
   FastLED.clear();
   FastLED.show();
