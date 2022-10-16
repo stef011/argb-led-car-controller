@@ -14,8 +14,10 @@
 #include <effects/MovingRainbow.h>
 #include <effects/Sinelon.h>
 
-#define BUTTON_PREV_PIN 5
-#define BUTTON_NEXT_PIN 4
+class BackAndForth; // mysterious forward declaration for this effect
+
+#define BUTTON_PREV_PIN 4
+#define BUTTON_NEXT_PIN 5
 
 class Controller
 {

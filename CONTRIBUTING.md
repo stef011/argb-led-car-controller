@@ -12,7 +12,7 @@ You can contribute to the project if you see some bugs or if you want to add som
 
 If you want to add an effect, you'll need to create two new files in `include/effects` and `src/effects`. The name of these file will be the name of the effect. The file should contain a class that inherits from the `Effect` class. The class should have a method called `tick` that will be called every frame. The `tick` method should return nothing, but takes in parameters the `ledStrip` object and a `parameter` object.
 
-To change the ledstrip color, you need to change the values in the table `ledStrip->leds[]`. The table contains the color of each led in a CHSV or CRGB object. You can change the color of a led by doing `ledStrip->leds[ledNumber] = CHSV(0, 255, 255);` for example.
+To change the ledstrip color, you need to change the values in the table `ledStrip.leds[]`. The table contains the color of each led in a CHSV or CRGB object. You can change the color of a led by doing `ledStrip.leds[ledNumber] = CHSV(0, 255, 255);` for example.
 
 The `parameter` object contains the values of the potentiometers. You can access them by doing `parameter->getBrightness()`, `parameter->getColor()` or `parameter->getSpeed()`. You can even directly access the potentiometer by doing `parameter->getPot1()`, `parameter->getPot2()`, `parameter->getPot3()` or `parameter->getPot4()`. And then calling a method on the potentiometer object, either `getValue()`, `getValue8()`, getValueHSV()`or`getLength()`.
 
@@ -39,9 +39,9 @@ void MyEffect::tick(LedStrip *ledStrip, Parameter *parameter)
   int potValue = parameter->getPot1()->getValueHSV();
 
   // Change the color of the led strip
-  for (int i = 0; i < ledStrip->getLength(); i++)
+  for (int i = 0; i < ledStrip.getLength(); i++)
   {
-    ledStrip->leds[i] = CHSV(potValue.hue(), 255, 255);
+    ledStrip.leds[i] = CHSV(potValue.hue(), 255, 255);
   }
 }
 ```

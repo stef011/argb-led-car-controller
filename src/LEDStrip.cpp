@@ -44,10 +44,10 @@ void LEDStrip::show()
   FastLED.show();
 }
 
-void LEDStrip::setEffect(Effect &effect)
+void LEDStrip::setEffect(Effect *effect)
 {
-
-  this->_currentEffect = &effect;
+  this->_currentEffect = effect;
+  FastLED.clear();
 }
 
 int LEDStrip::getNumLeds()

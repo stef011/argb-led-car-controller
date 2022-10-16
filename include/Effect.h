@@ -12,6 +12,7 @@ class Effect
 {
 private:
 public:
+  Effect();
   virtual ~Effect();
   void virtual tick(LEDStrip &ledStrip, Parameters *parameters);
 };

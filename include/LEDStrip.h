@@ -7,6 +7,7 @@
 
 #define LED_TYPE WS2812B
 #define COLOR_ORDER GRB
+#define MAX_CURRENT 4000;
 
 class Effect;     // TOFIX: circular dependency
 class Parameters; // TOFIX: circular dependency
@@ -31,7 +32,7 @@ public:
 
   void show(); // Show the current effect
 
-  void setEffect(Effect &); // Set the effect that is currently running
+  void setEffect(Effect *); // Set the effect that is currently running
 
   int getNumLeds(); // Get the number of LEDs in the strip
 };

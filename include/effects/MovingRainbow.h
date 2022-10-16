@@ -6,7 +6,7 @@
 class MovingRainbow : public Effect
 {
 public:
-  void tick(LEDStrip *, Parameters *);
+  void tick(LEDStrip &, Parameters *);
 };
 
 #endif

@@ -2,7 +2,8 @@
 
 Potentiometer::Potentiometer(uint8_t pin, uint16_t numLeds) : Input(pin)
 {
-  pinMode(pin, INPUT_PULLUP);
+  // pinMode(pin, INPUT);
+  // this->_pin = pin;
   this->_numLeds = numLeds;
   update();
 }

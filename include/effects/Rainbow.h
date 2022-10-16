@@ -6,7 +6,7 @@
 class Rainbow : public Effect
 {
 public:
-  void tick(LEDStrip *, Parameters *);
+  void tick(LEDStrip &, Parameters *);
 };
 
 #endif

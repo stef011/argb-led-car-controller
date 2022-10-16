@@ -5,7 +5,7 @@
 
 class Input
 {
-private:
+protected:
   uint8_t _pin;
 
 public:

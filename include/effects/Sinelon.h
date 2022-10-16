@@ -6,7 +6,7 @@
 class Sinelon : public Effect
 {
 public:
-  void tick(LEDStrip *ledStrip, Parameters *parameters);
+  void tick(LEDStrip &, Parameters *);
 
 private:
   CRGBPalette16 currentPalette;

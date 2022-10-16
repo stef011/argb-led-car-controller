@@ -7,9 +7,8 @@
 class Potentiometer : Input
 {
 private:
-  uint8_t _pin;
-  uint16_t _value;
-  uint16_t _numLeds;
+  uint16_t _value;   // 0 - 1023 (10 bit) The value of the potentiometer
+  uint16_t _numLeds; // 0 - 1023 (10 bit) The number of LEDs in the strip
 
   void update();
 

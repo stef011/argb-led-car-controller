@@ -19,32 +19,33 @@ Controller::Controller(LEDStrip &ledStrip) : _ledStrip(&ledStrip)
  */
 void Controller::tick()
 {
-  if (this->_prevButton->isPressed())
+  if (this->_prevButton->latchState())
   {
     this->PreviousEffect();
   }
 
-  if (this->_nextButton->isPressed())
+  if (this->_nextButton->latchState())
   {
     this->NextEffect();
   }
+
   this->_ledStrip->show();
 }
 
 void Controller::SetEffect(Effects *effect)
 {
-  this->_ledStrip->setEffect(*_effectList[static_cast<int>(*effect)]);
+  this->_ledStrip->setEffect(_effectList[static_cast<int>(*effect)]);
   this->_ledStrip->show();
 }
 
 void Controller::NextEffect()
 {
   this->_currentEffect = ++_currentEffect;
-  this->SetEffect(&this->_currentEffect);
+  this->SetEffect(&_currentEffect);
 }
 
 void Controller::PreviousEffect()
 {
   this->_currentEffect = --_currentEffect;
-  this->SetEffect(&this->_currentEffect);
+  this->SetEffect(&_currentEffect);
 }
