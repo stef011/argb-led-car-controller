@@ -46,6 +46,16 @@ If you want to change the type of Leds you're using, you'll need to change the `
 
 Some types of leds have a different order of the RGB values, for instance the WS2812B leds have the order GRB, so you'll need to change the `COLOR_ORDER` parameter in the `LEDStrip.h` file.
 
+### Example wiring with Arduino Micro Pro
+
+![Wiring](/img/WiringDiagram.png)
+
+**Note: The wiring diagram is for the Arduino Micro Pro, but you can use any Arduino board.**
+
+<div style="color: red; font-weight: bold">
+Warning: If you have some wierd behavior with the led strip and you are using a long cable for the data pin, please add a 220Ω resistor between the data pin on the arduino and the led strip. [Some explanations](https://arduino.stackexchange.com/a/78266/57443)
+</div>
+
 ## Contributing
 
 Please check the [Contribution guide](CONTRIBUTING.md) file for more information.
