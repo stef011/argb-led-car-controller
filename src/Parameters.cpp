@@ -37,7 +37,7 @@ uint8_t Parameters::getFade()
 
 uint8_t Parameters::getSpeed()
 {
-  return map(_pot4->getValue(), 0, 1023, 1, 20);
+  return map(_pot4->getValue(), 0, 1023, 1, 120);
 }
 
 uint16_t Parameters::getLength()

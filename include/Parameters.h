@@ -3,10 +3,10 @@
 
 #include <FastLED.h>
 #include <Potentiometer.h>
-#define PIN_POT1 A1
-#define PIN_POT2 A2
-#define PIN_POT3 A3
-#define PIN_POT4 A4
+#define PIN_POT1 A0
+#define PIN_POT2 A1
+#define PIN_POT3 A2
+#define PIN_POT4 A3
 
 class Potentiometer; // TOFIX: circular dependency
 

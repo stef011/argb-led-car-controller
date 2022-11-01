@@ -5,6 +5,9 @@
 
 class ColorWipe : public Effect
 {
+private:
+  static const uint8_t _commetSize = 5;
+
 public:
   void tick(LEDStrip &, Parameters *);
 };
