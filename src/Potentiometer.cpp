@@ -43,7 +43,7 @@ void Potentiometer::update()
   this->_value = smoothedValue(); // 0 - 1023
 }
 
-int Potentiometer::smoothedValue()
+uint16_t Potentiometer::smoothedValue()
 {
   // subtract the last reading:
   total = total - readings[readIndex];
