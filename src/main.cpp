@@ -4,7 +4,7 @@
 #include <LEDStrip.h>
 
 #define LED_PIN 2
-#define LED_COUNT 223
+#define LED_COUNT 88
 #define MAX_BRIGHTNESS 255
 
 LEDStrip *ledStrip;
