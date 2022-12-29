@@ -7,7 +7,7 @@
 
 #define LED_TYPE WS2812B
 #define COLOR_ORDER GRB
-#define MAX_CURRENT 4000
+#define MAX_CURRENT 2000
 
 class Effect;     // TOFIX: circular dependency
 class Parameters; // TOFIX: circular dependency

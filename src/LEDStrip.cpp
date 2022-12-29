@@ -33,7 +33,7 @@ void LEDStrip::init()
   FastLED.setBrightness(this->_maxBrightness);
   FastLED.clear();
   FastLED.show();
-  delay(1000);
+  delay(100);
 }
 
 void LEDStrip::show()
