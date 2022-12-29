@@ -5,8 +5,12 @@
  *
  * @param ledStrip The LED strip to control
  */
-Controller::Controller(LEDStrip &ledStrip) : _ledStrip(&ledStrip)
+Controller::Controller(LEDStrip *ledStrips[])
 {
+  for (int i = 0; i < STRIPS_COUNT; i++)
+  {
+    this->_ledStrips[i] = ledStrips[i];
+  }
   this->_prevButton = new Button(BUTTON_PREV_PIN);
   this->_nextButton = new Button(BUTTON_NEXT_PIN);
   this->SetEffect(&this->_currentEffect);
@@ -29,13 +33,19 @@ void Controller::tick()
     this->NextEffect();
   }
 
-  this->_ledStrip->show();
+  for (size_t i = 0; i < STRIPS_COUNT; i++)
+  {
+    this->_ledStrips[i]->show();
+  }
 }
 
 void Controller::SetEffect(Effects *effect)
 {
-  this->_ledStrip->setEffect(_effectList[static_cast<int>(*effect)]);
-  this->_ledStrip->show();
+  for (size_t i = 0; i < STRIPS_COUNT; i++)
+  {
+    this->_ledStrips[i]->setEffect(_effectList[static_cast<int>(*effect)]);
+    this->_ledStrips[i]->show();
+  }
 }
 
 void Controller::NextEffect()

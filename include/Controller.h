@@ -16,13 +16,15 @@
 
 class BackAndForth; // mysterious forward declaration for this effect
 
-#define BUTTON_PREV_PIN 4
-#define BUTTON_NEXT_PIN 5
+#define BUTTON_PREV_PIN 5
+#define BUTTON_NEXT_PIN 4
+#define STRIPS_COUNT 2
 
 class Controller
 {
 private:
-  LEDStrip *_ledStrip;
+  // LEDStrip *_ledStrip;
+  LEDStrip *_ledStrips[STRIPS_COUNT];
   void SetEffect(Effects *effect);
   void NextEffect();
   void PreviousEffect();
@@ -39,7 +41,7 @@ private:
       new Sinelon()};
 
 public:
-  Controller(LEDStrip &ledStrip);
+  Controller(LEDStrip *ledStrips[]);
   void tick();
 };
 
