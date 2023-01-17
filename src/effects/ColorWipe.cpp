@@ -6,7 +6,7 @@ void ColorWipe::tick(LEDStrip &ledStrip, Parameters *parameters)
 
   uint16_t thisLed = map(beat8(parameters->getSpeed()), 0, 255, 0, ledStrip.getNumLeds() - _commetSize);
 
-  for (int i = thisLed; i < thisLed + _commetSize; i++)
+  for (uint16_t i = thisLed; i < thisLed + _commetSize; i++)
   {
     ledStrip.leds[i] = CHSV(parameters->getColor().hue, 255, parameters->getBrightness());
   }
