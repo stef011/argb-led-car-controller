@@ -53,7 +53,7 @@ Some types of leds have a different order of the RGB values, for instance the WS
 **Note: The wiring diagram is for the Arduino Micro Pro, but you can use any Arduino board.**
 
 <div style="color: red; font-weight: bold">
-Warning: If you have some wierd behavior with the led strip and you are using a long cable for the data pin, please add a 220Ω resistor between the data pin on the arduino and the led strip. [Some explanations](https://arduino.stackexchange.com/a/78266/57443)
+Warning: If you have some weird behavior with the led strip and you are using a long cable for the data pin, please add a 220Ω resistor between the data pin on the arduino and the led strip. [Some explanations](https://arduino.stackexchange.com/a/78266/57443)
 </div>
 
 ## Contributing
